@@ -1,11 +1,5 @@
-/* ============================================
-   CHECKOUT.CSS — Checkout Page  (v2)
-   E-Commerce Clothing Store
-   ============================================ */
-
 @import url('./variables.css');
 
-/* ─── Reset ───────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 
@@ -23,7 +17,6 @@ img { display: block; max-width: 100%; }
 button { cursor: pointer; font-family: var(--font-family); border: none; background: none; }
 ul, ol { list-style: none; }
 
-/* ─── App ─────────────────────────────────── */
 .app {
   width: 100%;
   max-width: var(--max-width-mobile);
@@ -35,7 +28,6 @@ ul, ol { list-style: none; }
   overflow-x: hidden;
 }
 
-/* ─── Header ──────────────────────────────── */
 .checkout-header {
   display: flex;
   align-items: center;
@@ -62,7 +54,6 @@ ul, ol { list-style: none; }
   color: var(--color-black); letter-spacing: -0.2px;
 }
 
-/* ─── Body ────────────────────────────────── */
 .checkout-body {
   flex: 1;
   padding: 0 var(--space-5) calc(var(--space-20) + var(--space-8));
@@ -71,10 +62,8 @@ ul, ol { list-style: none; }
   gap: var(--space-5);
 }
 
-/* ─── Cart List ───────────────────────────── */
 .cart-list { display: flex; flex-direction: column; gap: var(--space-4); }
 
-/* ─── Cart Item ───────────────────────────── */
 .cart-item {
   background-color: var(--color-white); border-radius: var(--radius-xl);
   padding: var(--space-3);
@@ -86,7 +75,7 @@ ul, ol { list-style: none; }
   width: 80px; height: 80px;
   border-radius: var(--radius-lg);
   overflow: hidden; flex-shrink: 0;
-  background-color: #E8E6E4; /* neutral fallback while image loads / is empty */
+  background-color: #E8E6E4; 
 }
 .cart-thumb img {
   width: 100%; height: 100%;
@@ -122,7 +111,6 @@ ul, ol { list-style: none; }
 }
 .item-menu svg { width: 18px; height: 18px; }
 
-/* Cart quantity control */
 .qty-box {
   display: flex; align-items: center; gap: var(--space-2);
   background-color: var(--color-bg); border-radius: var(--radius-full);
@@ -146,13 +134,11 @@ ul, ol { list-style: none; }
   color: var(--color-dark); min-width: 18px; text-align: center;
 }
 
-/* ─── Section titles ──────────────────────── */
 .section-title {
   font-size: var(--font-size-md); font-weight: var(--font-weight-bold);
   color: var(--color-black); margin-bottom: var(--space-3);
 }
 
-/* ─── Payment Card ────────────────────────── */
 .pay-card {
   background-color: var(--color-white); border-radius: var(--radius-xl);
   padding: var(--space-4);
@@ -184,7 +170,6 @@ ul, ol { list-style: none; }
 }
 .card-chevron svg { width: 16px; height: 16px; color: var(--color-dark); }
 
-/* ─── Order Summary ───────────────────────── */
 .order-summary {
   background-color: var(--color-white); border-radius: var(--radius-xl);
   padding: var(--space-4); box-shadow: var(--shadow-card);
@@ -207,8 +192,6 @@ ul, ol { list-style: none; }
   font-size: var(--font-size-lg); font-weight: var(--font-weight-extrabold);
 }
 
-/* ─── Pay Button ──────────────────────────── */
-/* Mobile: fixed at bottom */
 .pay-btn {
   position: fixed;
   bottom: var(--space-6); left: 50%;
@@ -229,12 +212,6 @@ ul, ol { list-style: none; }
 .pay-btn:hover { background-color: var(--color-dark); transform: scale(1.01) translateX(-49.5%); }
 .pay-btn:active { transform: scale(0.98) translateX(-51%); }
 
-/* ══════════════════════════════════════════
-   PAYMENT SUCCESS MODAL
-   Technique: CSS :target pseudo-class
-   Triggered by <a href="#pay-modal">Pay</a>
-   ══════════════════════════════════════════ */
-
 .pay-modal {
   display: none;
   position: fixed; inset: 0;
@@ -243,12 +220,10 @@ ul, ol { list-style: none; }
   padding: var(--space-5);
 }
 
-/* Show when URL hash = #pay-modal */
 .pay-modal:target {
   display: flex;
 }
 
-/* Semi-transparent overlay — clicking it "closes" modal by navigating away from hash */
 .modal-overlay {
   position: absolute; inset: 0;
   background: rgba(18, 17, 17, 0.72);
@@ -256,7 +231,6 @@ ul, ol { list-style: none; }
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* The ticket card */
 .modal-card {
   position: relative; z-index: 1;
   width: 100%; max-width: 360px;
@@ -274,7 +248,6 @@ ul, ol { list-style: none; }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* Check icon circle */
 .receipt-check {
   width: 72px; height: 72px;
   border-radius: var(--radius-full);
@@ -285,7 +258,6 @@ ul, ol { list-style: none; }
 }
 .receipt-check svg { width: 36px; height: 36px; }
 
-/* Success message */
 .receipt-title {
   font-size: var(--font-size-xl); font-weight: var(--font-weight-bold);
   color: var(--color-black); text-align: center; line-height: var(--line-height-tight);
@@ -296,7 +268,6 @@ ul, ol { list-style: none; }
   margin-top: calc(-1 * var(--space-2));
 }
 
-/* ─── Ticket / Receipt ────────────────────── */
 .receipt-ticket {
   width: 100%;
   background-color: var(--color-bg);
@@ -317,13 +288,11 @@ ul, ol { list-style: none; }
   color: var(--color-black);
 }
 
-/* Dashed tear-line */
 .ticket-tear {
   border: none; border-top: 2px dashed #D0CECC;
   margin: 0;
 }
 
-/* Item rows inside receipt */
 .ticket-items { display: flex; flex-direction: column; gap: var(--space-2); }
 
 .ticket-row {
@@ -338,7 +307,6 @@ ul, ol { list-style: none; }
   color: var(--color-dark); flex-shrink: 0;
 }
 
-/* Total row */
 .ticket-total { display: flex; align-items: center; justify-content: space-between; }
 .ticket-total-label {
   font-size: var(--font-size-base); font-weight: var(--font-weight-bold); color: var(--color-black);
@@ -347,7 +315,6 @@ ul, ol { list-style: none; }
   font-size: var(--font-size-lg); font-weight: var(--font-weight-extrabold); color: var(--color-black);
 }
 
-/* ─── Continue Button ─────────────────────── */
 .btn-continue {
   width: 100%; height: 52px;
   background-color: var(--color-black); border-radius: var(--radius-full);
@@ -360,17 +327,12 @@ ul, ol { list-style: none; }
 .btn-continue:hover { background-color: var(--color-dark); transform: scale(1.01); }
 .btn-continue:active { transform: scale(0.98); }
 
-/* ══════════════════════════════════════════
-   RESPONSIVE BREAKPOINTS
-   ══════════════════════════════════════════ */
-
 @media (min-width: 480px) {
   .checkout-header          { padding: var(--space-6) var(--space-6) var(--space-4); }
   .checkout-body            { padding: 0 var(--space-6) calc(var(--space-20) + var(--space-8)); }
   .pay-btn                  { width: calc(100% - var(--space-12)); }
 }
 
-/* 768px — Tablet */
 @media (min-width: 768px) {
   body { background-color: #EAEAEA; }
 
@@ -386,7 +348,6 @@ ul, ol { list-style: none; }
   .pay-btn { max-width: 600px; }
 }
 
-/* 1024px — Desktop: 2-column layout */
 @media (min-width: 1024px) {
   .app                      { max-width: 1280px; }
 
@@ -394,7 +355,6 @@ ul, ol { list-style: none; }
     padding-left: var(--space-10); padding-right: var(--space-10);
   }
 
-  /* Side-by-side columns */
   .checkout-body {
     flex-direction: row;
     align-items: flex-start;
@@ -402,16 +362,13 @@ ul, ol { list-style: none; }
     padding: 0 var(--space-10) var(--space-12);
   }
 
-  /* Left: cart items */
   .checkout-left            { flex: 1; }
 
-  /* Right: summary + payment + button */
   .checkout-right {
     width: 380px; flex-shrink: 0;
     display: flex; flex-direction: column; gap: var(--space-5);
   }
 
-  /* Pay button: inline in right column (not fixed) */
   .pay-btn {
     position: static;
     transform: none;
@@ -423,7 +380,6 @@ ul, ol { list-style: none; }
   .pay-btn:active { transform: scale(0.98); }
 }
 
-/* 1280px — Wide desktop */
 @media (min-width: 1280px) {
   .app                      { max-width: 1440px; }
 

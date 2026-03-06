@@ -1,11 +1,5 @@
-/* ============================================
-   DETAIL.CSS — Product Detail Page  (v2)
-   E-Commerce Clothing Store
-   ============================================ */
-
 @import url('./variables.css');
 
-/* ─── Reset ───────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 
@@ -23,7 +17,6 @@ img { display: block; max-width: 100%; }
 button { cursor: pointer; font-family: var(--font-family); border: none; background: none; }
 ul, ol { list-style: none; }
 
-/* ─── App ─────────────────────────────────── */
 .app {
   width: 100%;
   max-width: var(--max-width-mobile);
@@ -35,7 +28,6 @@ ul, ol { list-style: none; }
   overflow-x: hidden;
 }
 
-/* ─── Detail Header (overlays hero) ──────── */
 .detail-header {
   display: flex;
   align-items: center;
@@ -58,33 +50,20 @@ ul, ol { list-style: none; }
 .header-btn:active { transform: scale(0.96); }
 .header-btn svg { width: 20px; height: 20px; color: var(--color-dark); }
 
-/* ══════════════════════════════════════════════
-   PRODUCT PANELS — CSS :target switching
-   DOM order: panels 8→2 first, panel 1 (.default) last.
-   This lets the ~ sibling combinator reach .default
-   from any of the earlier panels when they are :target.
-   ══════════════════════════════════════════════ */
-
-/* All panels hidden by default */
 .panel {
   display: none;
   flex-direction: column;
   flex: 1;
 }
 
-/* Product 1 is the default — shown when no hash is active */
 .panel.default {
   display: flex;
 }
 
-/* Show whichever panel matches the URL hash */
 .panel:target {
   display: flex;
 }
 
-/* When products 2–8 are targeted, hide the default (product-1).
-   Works because .default comes AFTER all other panels in the DOM
-   so the general sibling combinator ~ can reach it. */
 #product-2:target ~ .default,
 #product-3:target ~ .default,
 #product-4:target ~ .default,
@@ -95,13 +74,12 @@ ul, ol { list-style: none; }
   display: none;
 }
 
-/* ─── Hero Image ──────────────────────────── */
 .product-hero {
   width: 100%;
   aspect-ratio: 3 / 3.8;
   position: relative;
   overflow: hidden;
-  background-color: #E0DEDE; /* neutral fallback while image loads / is empty */
+  background-color: #E0DEDE; 
   flex-shrink: 0;
 }
 .hero-img {
@@ -110,7 +88,6 @@ ul, ol { list-style: none; }
   display: block;
 }
 
-/* ─── Detail Body ─────────────────────────── */
 .detail-body {
   flex: 1;
   background-color: var(--color-bg);
@@ -119,7 +96,6 @@ ul, ol { list-style: none; }
   display: flex; flex-direction: column; gap: var(--space-5);
 }
 
-/* ─── Product Info ────────────────────────── */
 .product-info { display: flex; flex-direction: column; gap: var(--space-3); }
 
 .info-top {
@@ -135,7 +111,6 @@ ul, ol { list-style: none; }
   letter-spacing: -0.4px;
 }
 
-/* Quantity selector */
 .qty-box {
   display: flex; align-items: center; gap: var(--space-3);
   background-color: var(--color-white); border-radius: var(--radius-full);
@@ -162,7 +137,6 @@ ul, ol { list-style: none; }
   color: var(--color-dark); min-width: 20px; text-align: center;
 }
 
-/* Rating row */
 .rating {
   display: flex; align-items: center; gap: var(--space-2);
 }
@@ -176,7 +150,6 @@ ul, ol { list-style: none; }
 
 .rating-count { font-size: var(--font-size-sm); color: var(--color-mid-gray); }
 
-/* Description */
 .product-desc {
   font-size: var(--font-size-base); color: var(--color-mid-gray);
   line-height: var(--line-height-loose);
@@ -188,10 +161,8 @@ ul, ol { list-style: none; }
 }
 .read-more:hover { text-decoration: underline; }
 
-/* ─── Divider ─────────────────────────────── */
 .divider { height: 1px; background-color: #E8E8E8; border: none; }
 
-/* ─── Options Row (sizes + colors) ───────── */
 .options-row {
   display: flex;
   align-items: flex-start;
@@ -207,15 +178,12 @@ ul, ol { list-style: none; }
   color: var(--color-black);
 }
 
-/* ─── Size Selector (radio hack) ─────────── */
 .size-options {
   display: flex; gap: var(--space-2); align-items: center;
 }
 
-/* Hide the actual radio input */
 .size-radio { display: none; }
 
-/* Style the label as a circle button */
 .size-opt {
   width: 40px; height: 40px;
   border-radius: var(--radius-full);
@@ -230,7 +198,6 @@ ul, ol { list-style: none; }
 }
 .size-opt:hover { border-color: var(--color-dark); }
 
-/* When radio is checked → style the next label */
 .size-radio:checked + .size-opt {
   background-color: var(--color-dark);
   border-color: var(--color-dark);
@@ -238,7 +205,6 @@ ul, ol { list-style: none; }
   box-shadow: var(--shadow-md);
 }
 
-/* ─── Color Selector (radio hack) ────────── */
 .color-options {
   display: flex; gap: var(--space-2); align-items: center;
 }
@@ -260,15 +226,12 @@ ul, ol { list-style: none; }
   outline-color: var(--color-dark);
 }
 
-/* Color values */
 .c-gray    { background-color: #787676; }
 .c-slate   { background-color: #4A4A4A; }
 .c-black   { background-color: #121111; }
 .c-white   { background-color: #FFFFFF; border: 1.5px solid var(--color-light-gray); }
 .c-beige   { background-color: #C9B89A; }
 
-/* ─── Add-to-Cart CTA ─────────────────────── */
-/* Mobile: fixed at bottom */
 .cta-bar {
   position: fixed;
   bottom: var(--space-6); left: 50%;
@@ -299,43 +262,34 @@ ul, ol { list-style: none; }
   text-decoration: line-through; margin-left: var(--space-1);
 }
 
-/* ══════════════════════════════════════════
-   RESPONSIVE BREAKPOINTS
-   ══════════════════════════════════════════ */
-
 @media (min-width: 480px) {
   .detail-header            { padding: var(--space-6) var(--space-6) var(--space-4); }
   .detail-body              { padding: var(--space-6) var(--space-6); padding-bottom: calc(var(--space-20) + var(--space-8)); }
   .cta-bar                  { width: calc(100% - var(--space-12)); }
 }
 
-/* 768px — Tablet */
 @media (min-width: 768px) {
   body { background-color: #EAEAEA; }
   .app { max-width: 100%; }
   .product-hero             { aspect-ratio: 3 / 2.8; }
 }
 
-/* 1024px — Desktop: 2-column layout */
 @media (min-width: 1024px) {
   .app {
     max-width: 1280px;
     overflow: visible;
   }
 
-  /* Header overlays only the left hero column */
   .detail-header {
-    max-width: 640px; /* half of 1280 */
+    max-width: 640px; 
   }
 
-  /* Side-by-side layout */
   .panel {
     flex-direction: row;
     flex: 1;
     min-height: 100vh;
   }
 
-  /* Left: sticky hero image */
   .product-hero {
     width: 50%;
     aspect-ratio: unset;
@@ -346,16 +300,14 @@ ul, ol { list-style: none; }
   }
   .hero-img { height: 100%; width: 100%; }
 
-  /* Right: scrollable content */
   .detail-body {
     width: 50%;
     padding: var(--space-12) var(--space-10) var(--space-10);
     overflow-y: auto;
-    /* Remove bottom padding for fixed button — button becomes inline */
+
     padding-bottom: var(--space-10);
   }
 
-  /* Add-to-cart button: inline (not fixed) on desktop */
   .cta-bar {
     position: static;
     transform: none;
@@ -371,7 +323,6 @@ ul, ol { list-style: none; }
   .product-desc             { font-size: var(--font-size-md); }
 }
 
-/* 1280px — Wide desktop */
 @media (min-width: 1280px) {
   .app                      { max-width: 1440px; }
   .detail-header            { max-width: 720px; }

@@ -11,7 +11,6 @@
 
 <div class="app">
 
-  <!-- ─── Header — shared by all products ──── -->
   <header class="detail-header" role="banner">
     <a href="../index.html" class="header-btn" aria-label="Go back">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -27,33 +26,11 @@
     </button>
   </header>
 
-  <!--
-    ╔══════════════════════════════════════════════════════╗
-    ║  CÓMO AGREGAR IMÁGENES                               ║
-    ║  Coloca los archivos en:  storage/img/               ║
-    ║    product-1.jpg → Modern Light Clothes              ║
-    ║    product-2.jpg → Light Dress Bless                 ║
-    ║    product-3.jpg → Urban Street Style                ║
-    ║    product-4.jpg → Minimal Blouse                    ║
-    ║    product-5.jpg → Elegant Long Coat                 ║
-    ║    product-6.jpg → Casual Hoodie                     ║
-    ║    product-7.jpg → Summer Midi Dress                 ║
-    ║    product-8.jpg → Formal Blazer                     ║
-    ╚══════════════════════════════════════════════════════╝
-
-    DOM ORDER: panels 8→2 first, panel 1 (.default) last.
-    This is intentional — it enables the CSS sibling trick:
-      #product-N:target ~ .default { display: none }
-    which hides product-1 when any other product is active.
-  -->
-
-  <!-- ═══════════════════ PRODUCT 8: Formal Blazer ═══════════════════ -->
-  <!-- Image: storage/img/product-8.jpg -->
   <div id="product-8" class="panel">
 
     <figure class="product-hero" aria-label="Photo of Formal Blazer">
       <img class="hero-img"
-           src="../storage/img/product-2.png"
+           src="../storage/img/product-1.png"
            alt="Formal Blazer" />
     </figure>
 
@@ -129,15 +106,13 @@
       </div>
 
     </main>
-  </div><!-- /#product-8 -->
+  </div>
 
-  <!-- ═══════════════════ PRODUCT 7: Summer Midi Dress ═══════════════════ -->
-  <!-- Image: storage/img/product-7.jpg -->
   <div id="product-7" class="panel">
 
     <figure class="product-hero" aria-label="Photo of Summer Midi Dress">
       <img class="hero-img"
-           src="../storage/img/product-4.png"
+           src="../storage/img/product-2.png"
            alt="Summer Midi Dress" />
     </figure>
 
@@ -213,15 +188,13 @@
       </div>
 
     </main>
-  </div><!-- /#product-7 -->
+  </div>
 
-  <!-- ═══════════════════ PRODUCT 6: Casual Hoodie ═══════════════════ -->
-  <!-- Image: storage/img/product-6.jpg -->
   <div id="product-6" class="panel">
 
     <figure class="product-hero" aria-label="Photo of Casual Hoodie">
       <img class="hero-img"
-           src="../storage/img/product-1.png"
+           src="../storage/img/product-3.png"
            alt="Casual Hoodie" />
     </figure>
 
@@ -297,15 +270,13 @@
       </div>
 
     </main>
-  </div><!-- /#product-6 -->
+  </div>
 
-  <!-- ═══════════════════ PRODUCT 5: Elegant Long Coat ═══════════════════ -->
-  <!-- Image: storage/img/product-5.jpg -->
   <div id="product-5" class="panel">
 
     <figure class="product-hero" aria-label="Photo of Elegant Long Coat">
       <img class="hero-img"
-           src="../storage/img/product-3.png"
+           src="../storage/img/product-4.png"
            alt="Elegant Long Coat" />
     </figure>
 
@@ -381,10 +352,8 @@
       </div>
 
     </main>
-  </div><!-- /#product-5 -->
+  </div>
 
-  <!-- ═══════════════════ PRODUCT 4: Minimal Blouse ═══════════════════ -->
-  <!-- Image: storage/img/product-4.jpg -->
   <div id="product-4" class="panel">
 
     <figure class="product-hero" aria-label="Photo of Minimal Blouse">
@@ -465,10 +434,8 @@
       </div>
 
     </main>
-  </div><!-- /#product-4 -->
+  </div>
 
-  <!-- ═══════════════════ PRODUCT 3: Urban Street Style ═══════════════════ -->
-  <!-- Image: storage/img/product-3.jpg -->
   <div id="product-3" class="panel">
 
     <figure class="product-hero" aria-label="Photo of Urban Street Style">
@@ -549,10 +516,8 @@
       </div>
 
     </main>
-  </div><!-- /#product-3 -->
+  </div>
 
-  <!-- ═══════════════════ PRODUCT 2: Light Dress Bless ═══════════════════ -->
-  <!-- Image: storage/img/product-2.jpg -->
   <div id="product-2" class="panel">
 
     <figure class="product-hero" aria-label="Photo of Light Dress Bless">
@@ -633,10 +598,8 @@
       </div>
 
     </main>
-  </div><!-- /#product-2 -->
+  </div>
 
-  <!-- ═══════════════════ PRODUCT 1: Modern Light Clothes ═══════════════════ -->
-  <!-- Image: storage/img/product-1.jpg -->
   <div id="product-1" class="panel default">
 
     <figure class="product-hero" aria-label="Photo of Modern Light Clothes">
@@ -717,9 +680,9 @@
       </div>
 
     </main>
-  </div><!-- /#product-1 -->
+  </div>
 
-</div><!-- /.app -->
+</div>
 
 </body>
 </html>
