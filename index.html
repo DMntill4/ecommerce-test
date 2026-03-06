@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Clothing Store — Discover the latest fashion trends" />
+  <title>Clothing Store — Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ─── Header ─────────────────────────── -->
+  <header class="header" role="banner">
+    <div class="greeting">
+      <span class="hello">Hello, Welcome <span aria-hidden="true">👋</span></span>
+      <h1 class="user-name">Albert Stevano</h1>
+    </div>
+
+    <a href="#profile" class="avatar" aria-label="View profile">
+      <!-- Coloca tu foto en: storage/img/avatar.jpg -->
+      <img src="storage/img/avatar.jpg" alt="Albert Stevano" />
+    </a>
+  </header>
+
+  <!-- ─── Search ──────────────────────────── -->
+  <section class="search" aria-label="Search products">
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <label for="search" class="u-hidden">Search clothes</label>
+      <input id="search" class="search-input" type="search"
+             placeholder="Search clothes . . ." autocomplete="off" />
+    </div>
+
+    <button class="filter-btn" type="button" aria-label="Open filters">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="6" x2="20" y2="6"/>
+        <line x1="8" y1="12" x2="16" y2="12"/>
+        <line x1="10" y1="18" x2="14" y2="18"/>
+      </svg>
+    </button>
+  </section>
+
+  <!-- ─── Categories ──────────────────────── -->
+  <nav class="categories" aria-label="Product categories">
+    <ul class="cat-list" role="list">
+
+      <li>
+        <a href="#all" class="cat-item active" aria-current="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+          </svg>
+          All Items
+        </a>
+      </li>
+
+      <li>
+        <a href="#dress" class="cat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 3H15L17 8L21 21H3L7 8L9 3Z"/>
+            <path d="M9 3C9 3 10 6 12 6C14 6 15 3 15 3"/>
+          </svg>
+          Dress
+        </a>
+      </li>
+
+      <li>
+        <a href="#tshirt" class="cat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 8L8 4H10C10 4 10 7 12 7C14 7 14 4 14 4H16L21 8L19 10L17 9V21H7V9L5 10L3 8Z"/>
+          </svg>
+          T-Shirt
+        </a>
+      </li>
+
+      <li>
+        <a href="#jeans" class="cat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 3H19L21 12L16 21L12 13L8 21L3 12L5 3Z"/>
+          </svg>
+          Jeans
+        </a>
+      </li>
+
+      <li>
+        <a href="#jacket" class="cat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 9L7 4H9C9 4 9 7 12 7C15 7 15 4 15 4H17L22 9L20 12H17V21H7V12H4L2 9Z"/>
+          </svg>
+          Jacket
+        </a>
+      </li>
+
+      <li>
+        <a href="#shoes" class="cat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 18h20v2H2zM3 14l4-6h6l3 4h2a3 3 0 0 1 0 6H3v-4z"/>
+          </svg>
+          Shoes
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- ─── Main Content ─────────────────────── -->
+  <main id="main-content">
+
+    <div class="section-head">
+      <h2 class="section-title">Popular Items</h2>
+      <a href="#all-items" class="view-all">See all</a>
+    </div>
+
+    <section class="products" aria-label="Product listing">
+      <div class="products-grid">
+
+        <!-- Card 1 -->
+        <article class="product-card">
+          <a href="views/detail.html#product-1" class="product-img" aria-label="View Modern Light Clothes">
+            <!-- Coloca la imagen en: storage/img/product-1.jpg -->
+            <img src="storage/img/product-1.png" alt="Modern Light Clothes" />
+            <button class="btn-fav" aria-label="Add to favorites" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </a>
+          <div class="card-body">
+            <h3 class="product-title">Modern Light Clothes</h3>
+            <span class="product-cat">T-Shirt</span>
+            <div class="card-footer">
+              <span class="product-price">$212.99</span>
+              <div class="rating" aria-label="5.0 stars">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span class="rating-val">5.0</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="product-card">
+          <a href="views/detail.html#product-2" class="product-img" aria-label="View Light Dress Bless">
+            <!-- Coloca la imagen en: storage/img/product-2.jpg -->
+            <img src="storage/img/product-2.png" alt="Light Dress Bless" />
+            <button class="btn-fav" aria-label="Add to favorites" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </a>
+          <div class="card-body">
+            <h3 class="product-title">Light Dress Bless</h3>
+            <span class="product-cat">Dress modern</span>
+            <div class="card-footer">
+              <span class="product-price">$162.99</span>
+              <div class="rating" aria-label="5.0 stars">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span class="rating-val">5.0</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="product-card">
+          <a href="views/detail.html#product-3" class="product-img" aria-label="View Urban Street Style">
+            <!-- Coloca la imagen en: storage/img/product-3.jpg -->
+            <img src="storage/img/product-3.png" alt="Urban Street Style" />
+            <button class="btn-fav active" aria-label="Remove from favorites" type="button">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                   style="fill:#FF4D4D;color:#FF4D4D">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </a>
+          <div class="card-body">
+            <h3 class="product-title">Urban Street Style</h3>
+            <span class="product-cat">Jacket</span>
+            <div class="card-footer">
+              <span class="product-price">$89.99</span>
+              <div class="rating" aria-label="4.8 stars">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span class="rating-val">4.8</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="product-card">
+          <a href="views/detail.html#product-4" class="product-img" aria-label="View Minimal Blouse">
+            <!-- Coloca la imagen en: storage/img/product-4.jpg -->
+            <img src="storage/img/product-4.png" alt="Minimal Blouse" />
+            <button class="btn-fav" aria-label="Add to favorites" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </a>
+          <div class="card-body">
+            <h3 class="product-title">Minimal Blouse</h3>
+            <span class="product-cat">T-Shirt</span>
+            <div class="card-footer">
+              <span class="product-price">$54.99</span>
+              <div class="rating" aria-label="4.6 stars">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span class="rating-val">4.6</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 — NEW: Elegant Coat -->
+        <article class="product-card">
+          <a href="views/detail.html#product-5" class="product-img" aria-label="View Elegant Coat">
+            <!-- Coloca la imagen en: storage/img/product-5.jpg -->
+            <img src="storage/img/product-3.png" alt="Elegant Long Coat" />
+            <button class="btn-fav" aria-label="Add to favorites" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </a>
+          <div class="card-body">
+            <h3 class="product-title">Elegant Long Coat</h3>
+            <span class="product-cat">Jacket</span>
+            <div class="card-footer">
+              <span class="product-price">$189.99</span>
+              <div class="rating" aria-label="4.9 stars">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span class="rating-val">4.9</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 — NEW: Casual Hoodie -->
+        <article class="product-card">
+          <a href="views/detail.html#product-6" class="product-img" aria-label="View Casual Hoodie">
+            <!-- Coloca la imagen en: storage/img/product-6.jpg -->
+            <img src="storage/img/product-1.png" alt="Casual Hoodie" />
+            <button class="btn-fav active" aria-label="Remove from favorites" type="button">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                   style="fill:#FF4D4D;color:#FF4D4D">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </a>
+          <div class="card-body">
+            <h3 class="product-title">Casual Hoodie</h3>
+            <span class="product-cat">T-Shirt</span>
+            <div class="card-footer">
+              <span class="product-price">$68.00</span>
+              <div class="rating" aria-label="4.7 stars">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span class="rating-val">4.7</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7 — NEW: Summer Midi Dress -->
+        <article class="product-card">
+          <a href="views/detail.html#product-7" class="product-img" aria-label="View Summer Midi Dress">
+            <!-- Coloca la imagen en: storage/img/product-7.jpg -->
+            <img src="storage/img/product-4.png" alt="Summer Midi Dress" />
+            <button class="btn-fav" aria-label="Add to favorites" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </a>
+          <div class="card-body">
+            <h3 class="product-title">Summer Midi Dress</h3>
+            <span class="product-cat">Dress</span>
+            <div class="card-footer">
+              <span class="product-price">$77.50</span>
+              <div class="rating" aria-label="4.5 stars">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span class="rating-val">4.5</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8 — NEW: Formal Blazer -->
+        <article class="product-card">
+          <a href="views/detail.html#product-8" class="product-img" aria-label="View Formal Blazer">
+            <!-- Coloca la imagen en: storage/img/product-8.jpg -->
+            <img src="storage/img/product-2.png" alt="Formal Blazer" />
+            <button class="btn-fav" aria-label="Add to favorites" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </a>
+          <div class="card-body">
+            <h3 class="product-title">Formal Blazer</h3>
+            <span class="product-cat">Jacket</span>
+            <div class="card-footer">
+              <span class="product-price">$134.99</span>
+              <div class="rating" aria-label="4.8 stars">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span class="rating-val">4.8</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.products-grid -->
+    </section>
+
+  </main>
+
+  <!-- ─── Bottom Navigation ─────────────── -->
+  <nav class="bottom-nav" aria-label="Main navigation">
+
+    <a href="/index.html" class="nav-item active" aria-current="page" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+        <path d="M3 9.5L12 2l9 7.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z"/>
+      </svg>
+    </a>
+
+    <a href="views/checkout.html" class="nav-item" aria-label="Shopping cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </svg>
+      <span class="nav-badge" aria-label="2 items in cart"></span>
+    </a>
+
+    <a href="#favorites" class="nav-item" aria-label="Favorites">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    </a>
+
+    <a href="#profile" class="nav-item" aria-label="Profile">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    </a>
+
+  </nav>
+
+</div><!-- /.app -->
+
+</body>
+</html>

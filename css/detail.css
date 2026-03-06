@@ -1,0 +1,380 @@
+/* ============================================
+   DETAIL.CSS — Product Detail Page  (v2)
+   E-Commerce Clothing Store
+   ============================================ */
+
+@import url('./variables.css');
+
+/* ─── Reset ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-dark);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: var(--font-family); border: none; background: none; }
+ul, ol { list-style: none; }
+
+/* ─── App ─────────────────────────────────── */
+.app {
+  width: 100%;
+  max-width: var(--max-width-mobile);
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ─── Detail Header (overlays hero) ──────── */
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-5) var(--space-4);
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+}
+
+.header-btn {
+  width: 40px; height: 40px;
+  background-color: var(--color-white); border-radius: var(--radius-full);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  text-decoration: none;
+}
+.header-btn:hover { transform: scale(1.05); box-shadow: var(--shadow-lg); }
+.header-btn:active { transform: scale(0.96); }
+.header-btn svg { width: 20px; height: 20px; color: var(--color-dark); }
+
+/* ══════════════════════════════════════════════
+   PRODUCT PANELS — CSS :target switching
+   DOM order: panels 8→2 first, panel 1 (.default) last.
+   This lets the ~ sibling combinator reach .default
+   from any of the earlier panels when they are :target.
+   ══════════════════════════════════════════════ */
+
+/* All panels hidden by default */
+.panel {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Product 1 is the default — shown when no hash is active */
+.panel.default {
+  display: flex;
+}
+
+/* Show whichever panel matches the URL hash */
+.panel:target {
+  display: flex;
+}
+
+/* When products 2–8 are targeted, hide the default (product-1).
+   Works because .default comes AFTER all other panels in the DOM
+   so the general sibling combinator ~ can reach it. */
+#product-2:target ~ .default,
+#product-3:target ~ .default,
+#product-4:target ~ .default,
+#product-5:target ~ .default,
+#product-6:target ~ .default,
+#product-7:target ~ .default,
+#product-8:target ~ .default {
+  display: none;
+}
+
+/* ─── Hero Image ──────────────────────────── */
+.product-hero {
+  width: 100%;
+  aspect-ratio: 3 / 3.8;
+  position: relative;
+  overflow: hidden;
+  background-color: #E0DEDE; /* neutral fallback while image loads / is empty */
+  flex-shrink: 0;
+}
+.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+
+/* ─── Detail Body ─────────────────────────── */
+.detail-body {
+  flex: 1;
+  background-color: var(--color-bg);
+  padding: var(--space-6) var(--space-5);
+  padding-bottom: calc(var(--space-20) + var(--space-8));
+  display: flex; flex-direction: column; gap: var(--space-5);
+}
+
+/* ─── Product Info ────────────────────────── */
+.product-info { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.info-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.product-name {
+  font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold);
+  color: var(--color-black); line-height: var(--line-height-tight);
+  letter-spacing: -0.4px;
+}
+
+/* Quantity selector */
+.qty-box {
+  display: flex; align-items: center; gap: var(--space-3);
+  background-color: var(--color-white); border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-3); box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.qty-btn {
+  width: 28px; height: 28px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-light-gray);
+  background: var(--color-white);
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition-fast);
+}
+.qty-btn:hover {
+  border-color: var(--color-dark); background-color: var(--color-dark);
+}
+.qty-btn svg { width: 14px; height: 14px; color: var(--color-dark); }
+.qty-btn:hover svg { color: var(--color-white); }
+
+.qty-val {
+  font-size: var(--font-size-base); font-weight: var(--font-weight-bold);
+  color: var(--color-dark); min-width: 20px; text-align: center;
+}
+
+/* Rating row */
+.rating {
+  display: flex; align-items: center; gap: var(--space-2);
+}
+
+.star-icon { width: 18px; height: 18px; fill: var(--color-star); color: var(--color-star); }
+
+.rating-val {
+  font-size: var(--font-size-base); font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+}
+
+.rating-count { font-size: var(--font-size-sm); color: var(--color-mid-gray); }
+
+/* Description */
+.product-desc {
+  font-size: var(--font-size-base); color: var(--color-mid-gray);
+  line-height: var(--line-height-loose);
+}
+
+.read-more {
+  font-weight: var(--font-weight-bold); color: var(--color-dark);
+  cursor: pointer;
+}
+.read-more:hover { text-decoration: underline; }
+
+/* ─── Divider ─────────────────────────────── */
+.divider { height: 1px; background-color: #E8E8E8; border: none; }
+
+/* ─── Options Row (sizes + colors) ───────── */
+.options-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.size-box, .color-box { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.option-label {
+  font-size: var(--font-size-base); font-weight: var(--font-weight-semibold);
+  color: var(--color-black);
+}
+
+/* ─── Size Selector (radio hack) ─────────── */
+.size-options {
+  display: flex; gap: var(--space-2); align-items: center;
+}
+
+/* Hide the actual radio input */
+.size-radio { display: none; }
+
+/* Style the label as a circle button */
+.size-opt {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-light-gray);
+  background-color: var(--color-white);
+  font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);
+  color: var(--color-dark);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+.size-opt:hover { border-color: var(--color-dark); }
+
+/* When radio is checked → style the next label */
+.size-radio:checked + .size-opt {
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── Color Selector (radio hack) ────────── */
+.color-options {
+  display: flex; gap: var(--space-2); align-items: center;
+}
+
+.color-radio { display: none; }
+
+.color-opt {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  border: 2.5px solid transparent;
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition: transform var(--transition-fast), outline-color var(--transition-fast);
+}
+.color-opt:hover { transform: scale(1.1); }
+
+.color-radio:checked + .color-opt {
+  outline-color: var(--color-dark);
+}
+
+/* Color values */
+.c-gray    { background-color: #787676; }
+.c-slate   { background-color: #4A4A4A; }
+.c-black   { background-color: #121111; }
+.c-white   { background-color: #FFFFFF; border: 1.5px solid var(--color-light-gray); }
+.c-beige   { background-color: #C9B89A; }
+
+/* ─── Add-to-Cart CTA ─────────────────────── */
+/* Mobile: fixed at bottom */
+.cta-bar {
+  position: fixed;
+  bottom: var(--space-6); left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - var(--space-10));
+  max-width: calc(var(--max-width-mobile) - var(--space-10));
+  z-index: 100;
+}
+
+.add-btn {
+  width: 100%; height: 60px;
+  background-color: var(--color-black); border-radius: var(--radius-full);
+  display: flex; align-items: center; justify-content: center; gap: var(--space-3);
+  color: var(--color-white);
+  font-size: var(--font-size-md); font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-btn);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  text-decoration: none; cursor: pointer; border: none;
+}
+.add-btn:hover { background-color: var(--color-dark); transform: scale(1.01); }
+.add-btn:active { transform: scale(0.98); }
+.add-btn svg { width: 22px; height: 22px; color: var(--color-white); }
+
+.btn-price { font-weight: var(--font-weight-extrabold); }
+
+.old-price {
+  font-size: var(--font-size-sm); color: var(--color-light-gray);
+  text-decoration: line-through; margin-left: var(--space-1);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════════ */
+
+@media (min-width: 480px) {
+  .detail-header            { padding: var(--space-6) var(--space-6) var(--space-4); }
+  .detail-body              { padding: var(--space-6) var(--space-6); padding-bottom: calc(var(--space-20) + var(--space-8)); }
+  .cta-bar                  { width: calc(100% - var(--space-12)); }
+}
+
+/* 768px — Tablet */
+@media (min-width: 768px) {
+  body { background-color: #EAEAEA; }
+  .app { max-width: 100%; }
+  .product-hero             { aspect-ratio: 3 / 2.8; }
+}
+
+/* 1024px — Desktop: 2-column layout */
+@media (min-width: 1024px) {
+  .app {
+    max-width: 1280px;
+    overflow: visible;
+  }
+
+  /* Header overlays only the left hero column */
+  .detail-header {
+    max-width: 640px; /* half of 1280 */
+  }
+
+  /* Side-by-side layout */
+  .panel {
+    flex-direction: row;
+    flex: 1;
+    min-height: 100vh;
+  }
+
+  /* Left: sticky hero image */
+  .product-hero {
+    width: 50%;
+    aspect-ratio: unset;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-shrink: 0;
+  }
+  .hero-img { height: 100%; width: 100%; }
+
+  /* Right: scrollable content */
+  .detail-body {
+    width: 50%;
+    padding: var(--space-12) var(--space-10) var(--space-10);
+    overflow-y: auto;
+    /* Remove bottom padding for fixed button — button becomes inline */
+    padding-bottom: var(--space-10);
+  }
+
+  /* Add-to-cart button: inline (not fixed) on desktop */
+  .cta-bar {
+    position: static;
+    transform: none;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin-top: var(--space-4);
+  }
+
+  .product-name             { font-size: var(--font-size-3xl); }
+  .product-desc             { font-size: var(--font-size-md); }
+}
+
+/* 1280px — Wide desktop */
+@media (min-width: 1280px) {
+  .app                      { max-width: 1440px; }
+  .detail-header            { max-width: 720px; }
+  .product-hero             { width: 50%; }
+  .detail-body              { padding: var(--space-12) var(--space-12) var(--space-12); }
+}

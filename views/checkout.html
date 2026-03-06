@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Checkout — Review your order and pay" />
+  <title>Checkout — Clothing Store</title>
+  <link rel="stylesheet" href="../css/checkout.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ─── Header ──────────────────────── -->
+  <header class="checkout-header" role="banner">
+    <a href="../index.html" class="header-btn" aria-label="Back to shop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </a>
+
+    <h1 class="checkout-title">Checkout</h1>
+
+    <button class="header-btn" type="button" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- ─── Main: 2-col on desktop ───────── -->
+  <main id="main-content" class="checkout-body">
+
+    <!-- LEFT column: cart items -->
+    <section class="checkout-left" aria-label="Items in your cart">
+      <ul class="cart-list" role="list">
+
+        <!-- Cart Item 1 -->
+        <li class="cart-item">
+          <div class="cart-thumb" aria-hidden="true">
+            <!-- Coloca la imagen en: storage/img/product-1.jpg -->
+            <img src="../../storage/img/product-1.jpg" alt="Modern light clothes" />
+          </div>
+
+          <div class="cart-info">
+            <span class="item-name">Modern light clothes</span>
+            <span class="item-cat">Dress modern</span>
+            <span class="item-price">$212.99</span>
+          </div>
+
+          <div class="item-controls">
+            <button class="item-menu" type="button" aria-label="More options">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="5" cy="12" r="1.5"/>
+                <circle cx="12" cy="12" r="1.5"/>
+                <circle cx="19" cy="12" r="1.5"/>
+              </svg>
+            </button>
+            <div class="qty-box" role="group" aria-label="Quantity">
+              <button class="qty-btn" type="button" aria-label="Decrease">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+              <span class="qty-val" aria-live="polite">4</span>
+              <button class="qty-btn" type="button" aria-label="Increase">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </li>
+
+        <!-- Cart Item 2 -->
+        <li class="cart-item">
+          <div class="cart-thumb" aria-hidden="true">
+            <!-- Coloca la imagen en: storage/img/product-2.jpg -->
+            <img src="../../storage/img/product-2.jpg" alt="Modern light clothes" />
+          </div>
+
+          <div class="cart-info">
+            <span class="item-name">Modern light clothes</span>
+            <span class="item-cat">Dress modern</span>
+            <span class="item-price">$162.99</span>
+          </div>
+
+          <div class="item-controls">
+            <button class="item-menu" type="button" aria-label="More options">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="5" cy="12" r="1.5"/>
+                <circle cx="12" cy="12" r="1.5"/>
+                <circle cx="19" cy="12" r="1.5"/>
+              </svg>
+            </button>
+            <div class="qty-box" role="group" aria-label="Quantity">
+              <button class="qty-btn" type="button" aria-label="Decrease">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+              <span class="qty-val" aria-live="polite">1</span>
+              <button class="qty-btn" type="button" aria-label="Increase">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- RIGHT column: payment + summary + pay button -->
+    <aside class="checkout-right" aria-label="Order summary and payment">
+
+      <!-- Payment Method -->
+      <section aria-label="Shipping information">
+        <h2 class="section-title">Shipping Information</h2>
+        <div class="pay-card" role="group" aria-label="Visa card ending 2143">
+          <div class="pay-card-left">
+            <div class="visa-logo" aria-hidden="true">
+              <span>VISA</span>
+            </div>
+            <span class="card-number" aria-label="Card ending 2143">**** **** **** 2143</span>
+          </div>
+          <div class="card-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Order Summary -->
+      <section aria-label="Price summary">
+        <dl class="order-summary">
+          <div class="summary-row">
+            <dt class="summary-label">Total (9 items)</dt>
+            <dd class="summary-value">$1,014.95</dd>
+          </div>
+          <div class="summary-row">
+            <dt class="summary-label">Shipping Fee</dt>
+            <dd class="summary-value">$0.00</dd>
+          </div>
+          <div class="summary-row">
+            <dt class="summary-label">Discount</dt>
+            <dd class="summary-value">$0.00</dd>
+          </div>
+          <hr class="summary-divider" aria-hidden="true" />
+          <div class="summary-row total">
+            <dt class="summary-label">Sub Total</dt>
+            <dd class="summary-value">$1,014.95</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Pay Button — triggers modal via :target -->
+      <a href="#pay-modal" class="pay-btn" aria-label="Pay $1,014.95">Pay</a>
+
+    </aside>
+
+  </main>
+
+</div><!-- /.app -->
+
+
+<!-- ════════════════════════════════════════════
+     PAYMENT SUCCESS MODAL
+     Uses CSS :target — shown when URL hash = #pay-modal
+     Close: clicking overlay navigates to checkout.html (removes hash)
+     Continue: links to index page
+     ════════════════════════════════════════════ -->
+<div class="pay-modal" id="pay-modal" aria-hidden="true">
+
+  <!-- Overlay — clicking it "closes" the modal -->
+  <a href="checkout.html" class="modal-overlay" aria-label="Close confirmation" tabindex="-1"></a>
+
+  <!-- Ticket card -->
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+    <!-- Success icon -->
+    <div class="receipt-check" aria-hidden="true">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" fill="#22C55E"/>
+        <polyline points="16,30 25,40 44,20"
+                  fill="none" stroke="white" stroke-width="4.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Message -->
+    <h2 id="modal-title" class="receipt-title">¡Pago completado<br>con éxito!</h2>
+    <p class="receipt-subtitle">Tu pedido está siendo procesado</p>
+
+    <!-- Receipt ticket -->
+    <div class="receipt-ticket">
+
+      <div class="ticket-order">
+        <span class="ticket-order-label">Número de orden</span>
+        <span class="ticket-order-num">ORDER #483920</span>
+      </div>
+
+      <hr class="ticket-tear" aria-hidden="true" />
+
+      <div class="ticket-items">
+        <div class="ticket-row">
+          <span>Modern light clothes × 4</span>
+          <span>$851.96</span>
+        </div>
+        <div class="ticket-row">
+          <span>Modern light clothes × 1</span>
+          <span>$162.99</span>
+        </div>
+      </div>
+
+      <hr class="ticket-tear" aria-hidden="true" />
+
+      <div class="ticket-total">
+        <span class="ticket-total-label">Total pagado</span>
+        <span class="ticket-total-val">$1,014.95</span>
+      </div>
+
+    </div>
+
+    <!-- Continue shopping -->
+    <a href="../index.html" class="btn-continue">
+      Continuar comprando
+    </a>
+
+  </div><!-- /.modal-card -->
+
+</div><!-- /.pay-modal -->
+
+
+</body>
+</html>
