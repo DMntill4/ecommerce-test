@@ -26,6 +26,7 @@ ul, ol { list-style: none; }
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  margin-top: 44px;
 }
 
 .checkout-header {
@@ -35,7 +36,7 @@ ul, ol { list-style: none; }
   padding: var(--space-6) var(--space-5) var(--space-4);
   background-color: var(--color-bg);
   position: sticky;
-  top: 0; z-index: 100;
+  top: 44px; z-index: 100;
 }
 
 .header-btn {
@@ -349,11 +350,8 @@ ul, ol { list-style: none; }
 }
 
 @media (min-width: 1024px) {
-  .app                      { max-width: 1280px; }
-
-  .checkout-header          {
-    padding-left: var(--space-10); padding-right: var(--space-10);
-  }
+  .app                      { max-width: 1280px; margin-top: 0; }
+  .checkout-header          { top: 0; padding-left: var(--space-10); padding-right: var(--space-10); }
 
   .checkout-body {
     flex-direction: row;
@@ -381,9 +379,49 @@ ul, ol { list-style: none; }
 }
 
 @media (min-width: 1280px) {
-  .app                      { max-width: 1440px; }
+  .app                      { max-width: 1440px; margin-top: 0; }
 
   .checkout-header          { padding-left: var(--space-12); padding-right: var(--space-12); }
   .checkout-body            { padding: 0 var(--space-12) var(--space-12); gap: var(--space-10); }
   .checkout-right           { width: 420px; }
+}
+
+.iphone-bar-top {
+  position: fixed; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100%; max-width: var(--max-width-mobile);
+  height: 44px; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22px;
+  pointer-events: none;
+}
+
+.iphone-time {
+  font-size: 15px; font-weight: 700;
+  color: var(--color-black); letter-spacing: -0.4px;
+  font-family: var(--font-family);
+}
+
+.iphone-icons {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--color-black);
+}
+
+.iphone-bar-bottom {
+  position: fixed; bottom: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 100%; max-width: var(--max-width-mobile);
+  height: 20px; z-index: 900;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+
+.iphone-home-pill {
+  width: 134px; height: 5px;
+  background: var(--color-black); opacity: 0.22;
+  border-radius: 100px;
+}
+
+@media (min-width: 1024px) {
+  .iphone-bar-top, .iphone-bar-bottom { display: none; }
 }

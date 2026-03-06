@@ -33,6 +33,7 @@ ul, ol { list-style: none; }
   flex-direction: column;
   padding-bottom: calc(var(--navbar-height) + var(--space-6));
   overflow-x: hidden;
+  margin-top: 44px;
 }
 
 .header {
@@ -42,7 +43,7 @@ ul, ol { list-style: none; }
   padding: var(--space-6) var(--space-5) var(--space-4);
   background-color: var(--color-bg);
   position: sticky;
-  top: 0;
+  top: 0px;
   z-index: 100;
 }
 
@@ -191,15 +192,15 @@ ul, ol { list-style: none; }
 .btn-fav {
   position: absolute; top: var(--space-3); right: var(--space-3);
   width: 32px; height: 32px;
-  background-color: black; border-radius: var(--radius-full);
+  background-color: var(--color-white); border-radius: var(--radius-full);
   display: flex; align-items: center; justify-content: center;
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-fast), background-color var(--transition-fast);
   z-index: 2; border: none; cursor: pointer;
 }
-.btn-fav:hover { transform: scale(1.1); background-color: var(--color-black); }
-.btn-fav svg { width: 15px; height: 15px; color: white; }
-.btn-fav.active svg { fill: #ffffff ! important ; color: #ffffff ! important; } 
+.btn-fav:hover { transform: scale(1.1); background-color: var(--color-bg); }
+.btn-fav svg { width: 15px; height: 15px; color: var(--color-dark); }
+.btn-fav.active svg { fill: #FF4D4D; color: #FF4D4D; }
 
 .card-body {
   padding: var(--space-3) var(--space-3) var(--space-4);
@@ -237,17 +238,16 @@ ul, ol { list-style: none; }
 }
 
 .bottom-nav {
-  position: fixed; bottom: 0;
+  position: fixed; bottom: 16px;
   left: 50%; transform: translateX(-50%);
-  width: 100%; max-width: var(--max-width-mobile);
+  width: calc(100% - 32px); max-width: 380px;
   height: var(--navbar-height);
   background-color: var(--color-black);
-  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  border-radius: var(--radius-full);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 var(--space-6); z-index: 200;
-  box-shadow: 0 -4px 24px rgba(18,17,17,0.20);
-  transition: bottom var(--transition-base), border-radius var(--transition-base),
-              max-width var(--transition-base), box-shadow var(--transition-base);
+  box-shadow: 0 8px 32px rgba(18,17,17,0.30);
+  transition: bottom var(--transition-base), box-shadow var(--transition-base);
 }
 
 .nav-item {
@@ -291,18 +291,12 @@ ul, ol { list-style: none; }
   .products                  { padding: 0 var(--space-8); }
 
   .products-grid             { grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
-
-  .bottom-nav {
-    max-width: 380px;
-    bottom: var(--space-5);
-    border-radius: var(--radius-full);
-    box-shadow: 0 8px 32px rgba(18,17,17,0.30);
-  }
 }
 
 @media (min-width: 1024px) {
-  .app                       { max-width: 1280px; }
-  .bottom-nav                { max-width: 1280px; }
+  .app                       { max-width: 1280px; margin-top: 0; padding-bottom: var(--space-12); }
+  .header                    { top: 0; }
+  .bottom-nav                { display: none; }
 
   .header, .section-head     { padding-left: var(--space-10); padding-right: var(--space-10); }
   .search, .categories       { padding-left: var(--space-10); padding-right: var(--space-10); }
@@ -310,15 +304,6 @@ ul, ol { list-style: none; }
 
   .products-grid             { grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
   .user-name                 { font-size: var(--font-size-2xl); }
-
-  .bottom-nav {
-    max-width: 420px;
-    bottom: var(--space-6);
-    height: 76px;
-    padding: 0 var(--space-8);
-  }
-  .nav-item                  { width: 62px; height: 62px; }
-  .nav-item svg              { width: 26px; height: 26px; }
 }
 
 @media (min-width: 1280px) {
@@ -329,5 +314,43 @@ ul, ol { list-style: none; }
   .products                  { padding: 0 var(--space-12); }
   .products-grid             { gap: var(--space-6); }
 
-  .bottom-nav                { bottom: var(--space-8); }
+.iphone-bar-top {
+  position: fixed; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100%; max-width: var(--max-width-mobile);
+  height: 44px; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22px;
+  pointer-events: none;
+}
+
+.iphone-time {
+  font-size: 15px; font-weight: 700;
+  color: var(--color-black); letter-spacing: -0.4px;
+  font-family: var(--font-family);
+}
+
+.iphone-icons {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--color-black);
+}
+
+.iphone-bar-bottom {
+  position: fixed; bottom: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 100%; max-width: var(--max-width-mobile);
+  height: 20px; z-index: 900;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+
+.iphone-home-pill {
+  width: 134px; height: 5px;
+  background: var(--color-black); opacity: 0.22;
+  border-radius: 100px;
+}
+}
+
+@media (min-width: 1024px) {
+  .iphone-bar-top, .iphone-bar-bottom { display: none; }
 }
