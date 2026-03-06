@@ -272,6 +272,50 @@ ul, ol { list-style: none; }
   border: 1.5px solid var(--color-black);
 }
 
+.iphone-top {
+  position: fixed;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100%; max-width: 430px;
+  height: 44px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22px;
+  z-index: 900;
+  pointer-events: none;
+}
+
+.iphone-time {
+  font-size: 15px; font-weight: 700; letter-spacing: -0.4px;
+  color: #121111;
+}
+
+.iphone-icons {
+  display: flex; align-items: center; gap: 6px;
+  color: #121111;
+}
+
+.iphone-bottom {
+  position: fixed;
+  bottom: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 100%; max-width: 430px;
+  height: 12px;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 150;
+  pointer-events: none;
+}
+
+.iphone-pill {
+  width: 134px; height: 5px;
+  background: #000000;
+  border-radius: 100px;
+}
+
+
+@media (min-width: 1024px) {
+  .iphone-top, .iphone-bottom { display: none; }
+}
+
 @media (min-width: 480px) {
   .header, .section-head     { padding-left: var(--space-6); padding-right: var(--space-6); }
   .search, .categories       { padding-left: var(--space-6); padding-right: var(--space-6); }
